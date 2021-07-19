@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+
+.user-header {
+  padding: 5px 10px;
+  width: 200px;
+  height: 300px;
+  margin: 30px;
+  border: 1px solid;
+}
+.profile-image {
+  height: 150px;
+  width: 150px;
+  padding: 10px;
+}
