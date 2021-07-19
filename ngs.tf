@@ -24,4 +24,7 @@ resource "aws_security_group" "demosg" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "Allow all outbound traffic"
   }
+  tags = {
+    "Name" = "Demo Security Groups"
+  }
 }

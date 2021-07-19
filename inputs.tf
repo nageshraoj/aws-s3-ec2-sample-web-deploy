@@ -8,7 +8,3 @@ variable "bucket_name" {
   type        = string
 }
 
-variable "bucket_location" {
-  description = "Bucket location"
-  type        = string
-}
