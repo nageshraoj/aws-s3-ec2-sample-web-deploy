@@ -12,13 +12,13 @@ resource "aws_instance" "demoec2" {
         sudo systemctl enable httpd
   EOF
 
-  connection {
-    type        = "ssh"
-    host        = self.public_ip
-    user        = "ec2-user"
-    password    = ""
-    private_key = file("nagesh.pem")
-  }
+  # connection {
+  #   type        = "ssh"
+  #   host        = self.public_ip
+  #   user        = "ec2-user"
+  #   password    = ""
+  #   private_key = file("nagesh.pem")
+  # }
 
   provisioner "file" {
     source      = "./myapp/"
