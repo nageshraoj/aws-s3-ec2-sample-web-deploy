@@ -3,7 +3,7 @@ resource "aws_instance" "demoec2" {
   instance_type          = var.ec2type
   subnet_id              = aws_subnet.demosubnet.id
   vpc_security_group_ids = [aws_security_group.demosg.id]
-  key_name = "nagesh"
+  # key_name = "nagesh"
   user_data = <<EOF
         #!/bin/bash
         sudo yum update -y 
@@ -30,6 +30,7 @@ resource "aws_instance" "demoec2" {
       "sleep 30",
        "sudo cp -R /home/ec2-user/. /var/www/html "
     ]
+    on_failure = continue
   }
 
   tags = {
