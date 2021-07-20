@@ -27,6 +27,6 @@ resource "aws_s3_bucket" "demobucket" {
   })
   force_destroy = true
   provisioner "local-exec" {
-    command = "aws s3 cp myapp/ s3://${var.bucket_name} --recursive"
+    command = "aws s3 cp ${website_location}/ s3://${var.bucket_name} --recursive"
   }
 }

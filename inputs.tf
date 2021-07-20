@@ -14,3 +14,11 @@ variable "bucket_name" {
   type        = string
 }
 
+variable "website_location" {
+  description = "Location of website"
+  type = string
+}
+variable "pubkey_name" {
+  description = "Location of website"
+  type = string
+}
