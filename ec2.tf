@@ -3,7 +3,7 @@ resource "aws_instance" "demoec2" {
   instance_type          = var.ec2type
   subnet_id              = aws_subnet.demosubnet.id
   vpc_security_group_ids = [aws_security_group.demosg.id]
-  key_name = var.key_name
+  key_name = var.pubkey_name
   user_data = <<EOF
         #!/bin/bash
         sudo yum update -y 
@@ -17,11 +17,11 @@ resource "aws_instance" "demoec2" {
     host        = self.public_ip
     user        = "ec2-user"
     password    = ""
-    private_key = file("${var.key_name}.pem")
+    private_key = file("${var.pubkey_name}.pem")
   }
 
   provisioner "file" {
-    source      = "${website_location}/"
+    source      = "${var.website_location}/"
     destination = "/home/ec2-user"
   }
 
