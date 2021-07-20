@@ -21,7 +21,7 @@ resource "aws_instance" "demoec2" {
   # }
 
   provisioner "file" {
-    source      = "./myapp/"
+    source      = "myapp/"
     destination = "/home/ec2-user"
   }
 
